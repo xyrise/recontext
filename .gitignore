@@ -1,0 +1,19 @@
+# This sets the `.gitignore` to be a *whitelist* by default.
+**/**
+!*/
+
+
+# Whitelist
+!*.md
+!LICENSE
+!.gitignore
+
+!*.js
+!*.svelte
+!*.html
+!*.css
+!*.json
+
+# Blacklist (overrides Whitelist)
+*/public/*
+*/node_modules/*
