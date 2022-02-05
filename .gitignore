@@ -14,7 +14,9 @@
 !*.css
 !*.json
 !*.py
+!*requirements.txt
 
 # Blacklist (overrides Whitelist)
 */public/*
 */node_modules/*
+*/__pycache__/*
