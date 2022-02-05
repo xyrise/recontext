@@ -12,11 +12,11 @@ app = FastAPI()
 @app.get('/')
 async def root():
     arxiv = Arxiv()
-    docs = text_similarity(arxiv.query(['covid', 'pandemic'], 10))
+    docs = text_similarity(arxiv.queryAll(['covid', 'pandemic'], 10))
     return docs
 
 @app.get('/research/')
 async def research(max: int, key: List[str] = Query(..., min_length=1)):
     arxiv = Arxiv()
-    docs = text_similarity(arxiv.query(key, max))
+    docs = text_similarity(arxiv.queryAll(key, max))
     return docs
