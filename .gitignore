@@ -17,6 +17,9 @@
 !*requirements.txt
 
 # Blacklist (overrides Whitelist)
-*/public/*
-*/node_modules/*
+**/public/*
+**/node_modules/*
+**/.DS_Store
 */__pycache__/*
+!**/img/*
+!**/extension/*
