@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cpx -C public/** public/** && rollup -c && cpx extension/**/*.* public",
+    "build": "rm -rf public && cpx -C public/** public/** && rollup -c && cpx extension/**/*.* public",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear"
   },
