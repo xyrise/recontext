@@ -26,7 +26,7 @@ class Arxiv:
             result = Document(
                     url=raw_result['link'],
                     title=raw_result['title'],
-                    authors=raw_result['authors'],
+                    authors=[author.name for author in raw_result['authors']],
                     published=raw_result['published'],
                     abstract=raw_result['summary']
                     )
