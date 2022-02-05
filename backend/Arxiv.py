@@ -1,6 +1,7 @@
+import feedparser
 import urllib, urllib.request
 
-import Document
+from Document import Document
 
 
 class Arxiv:
@@ -18,8 +19,21 @@ class Arxiv:
 
         url += '&max_results=' + str(max_results)
 
-        results = urllib.request.urlopen(url)
-        print(results.read().decode('utf-8'))
+        raw_results = feedparser.parse(url)['entries']
+        results = []
+
+        for raw_result in raw_results:
+            result = Document(
+                    url=raw_result['link'],
+                    title=raw_result['title'],
+                    authors=raw_result['authors'],
+                    published=raw_result['published'],
+                    abstract=raw_result['summary']
+                    )
+            results.append(result)
+
+        return results
+
 
 if __name__ == '__main__':
     arxiv = Arxiv()

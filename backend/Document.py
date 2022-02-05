@@ -1,7 +1,19 @@
+import json
+
 class Document:
-    def __init__(self, url='', title='', author='', abstract_text=''):
+    def __init__(self,
+            url='',
+            title='',
+            authors=[],
+            published='',
+            abstract=''
+    ):
         self.url = url
         self.title = title
-        self.author = author
-        self.abstract_text = abstract_text
-        self.top_keywords = []
+        self.authors = authors
+        self.published = published
+        self.abstract = abstract
+        self.keywords = []
+
+    def __repr__(self):
+        return json.dumps(self.__dict__)
