@@ -7,7 +7,7 @@
 </script>
 
 <p>Counter: {count}</p>
-<button on:click={sum}> + </button>
+<button class="ui button" on:click={sum}>Follow</button>
 
 <style>
 </style>
