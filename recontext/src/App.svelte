@@ -8,8 +8,8 @@
 
 <div class='container'>
     <div class='topBar'>
-        <img style='margin:auto;padding:.2rem;' src={covid} alt="covid19 virus icon">
-        <img style='margin:auto;padding:.2rem;' src={trend} alt="heart on fire icon">
+        <img style='margin:auto;padding:0 0 0 0.5rem;' src={covid} alt="covid19 virus icon">
+        <img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={trend} alt="heart on fire icon">
         <div class='topBarText'>
             <p> Current Keywords </p>
             <div class='tag'>
@@ -19,10 +19,10 @@
                 <li class='tagIn'> Freedom </li>
             </div>
         </div>
-        <img style='margin:auto;padding:.2rem;' src={down} alt="down arrow">
+        <img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={down} alt="down arrow">
     </div>
     <div class='recon'>
-        <b style='margin:auto;'> ReconText </b>
+        <strong style='margin:auto;padding:0 0.5rem 0 0.5rem'> ReconText </strong>
         <div class='tag'>
             <!-- link found recommending tags/keywords here -->
             <!-- hardcoded tags -->
@@ -32,6 +32,7 @@
             <li class='tagRec'> Regulation </li>
         </div>
     </div>
+    <hr/>
 
 </div>
 
@@ -43,7 +44,7 @@
         --c1sub: #FFDAC0;
         --width: 500px;
         --height: 640px;
-        --boundh: 60px;
+        --boundh: 70px;
         --boundw: 485px;
         --bradius: 10px;
         --bmargin: 5px;
@@ -96,9 +97,10 @@
     }
     
     .recon{
+        margin: 0.8rem var(--bmargin);
         display:grid;
         grid-template-columns: 1fr 12fr;
-    }
 
+    }
 
 </style>
