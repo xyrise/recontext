@@ -3,10 +3,15 @@
     let covid = 'img/covid.png';
     let trend = 'img/trend.png';
     let down = 'img/down.png';
+    let gleft = 'img/gleft.png';
+    let gright = 'img/gright.png';
+    let left = 'img/Left.png';
+    let right = 'img/Right.png';
 </script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
 
 <div class='container'>
+<div class='top'>
     <div class='topBar'>
         <img style='margin:auto;padding:0 0 0 0.5rem;' src={covid} alt="covid19 virus icon">
         <img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={trend} alt="heart on fire icon">
@@ -19,7 +24,6 @@
                 <li class='tagIn'> Freedom </li>
             </div>
         </div>
-        <img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={down} alt="down arrow">
     </div>
     <div class='recon'>
         <strong style='margin:auto;padding:0 0.5rem 0 0.5rem'> ReconText </strong>
@@ -32,10 +36,21 @@
             <li class='tagRec'> Regulation </li>
         </div>
     </div>
+</div>
     <div class='results'>
         <strong> Related Peer-Reviewed Paper </strong>
-        <hr/>
         <Content/>
+        <Content/>
+        <Content/>
+    </div>
+
+    <div class='footer'>
+        <!-- link number of pages here -->
+        <img src={gleft} alt="left arrow">
+        <div>
+            <p>1/15</p>
+        </div>
+        <img src={gright} alt="right arrow">
     </div>
 </div>
 
@@ -51,6 +66,7 @@
         --boundw: 485px;
         --bradius: 10px;
         --bmargin: 5px;
+        --arrowpadding: 20px;
     }
 
     p{
@@ -109,6 +125,16 @@
     .results{
         margin: var(--bmargin);
         padding: 0 0.5rem 0 0.5rem;
+    }
+
+    .footer{
+        margin: var(--bmargin);
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+    .larrow, .rarrow{
+        margin:auto;
+        padding: 0 var(--arrowpadding);
     }
 
 </style>
