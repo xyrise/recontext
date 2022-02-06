@@ -6,13 +6,15 @@ class Document:
             title='',
             authors=[],
             published='',
-            abstract=''
+            abstract='',
+            citationCount=0
     ):
         self.url = url
         self.title = title
         self.authors = authors
         self.published = published
         self.abstract = abstract
+        self.citationCount = citationCount
         self.keywords = []
 
     def __repr__(self):

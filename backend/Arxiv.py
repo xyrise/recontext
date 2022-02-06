@@ -1,5 +1,4 @@
 import feedparser
-import urllib, urllib.request
 
 from Document import Document
 

@@ -3,3 +3,4 @@ feedparser==6.0.8
 hypercorn==0.13.2
 sklearn==0.0
 pandas==1.4.0
+requests==2.27.1
