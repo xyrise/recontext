@@ -34,7 +34,6 @@
     </div>
     <div class='results'>
         <strong> Related Peer-Reviewed Paper </strong>
-        <hr/>
         <Content/>
     </div>
 </div>
