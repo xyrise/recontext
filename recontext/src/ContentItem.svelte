@@ -15,21 +15,34 @@
             <div class="tag"> <p>{tag}</p> </div>
         {/each}
     </div>
+    <div class="actions">
+        <div>
+            <span>{cited} cited</span>
+        </div>
+        <div>
+            <span> share </span>
+        </div>
+
+        <div>
+            <span> bookmark </span>
+        </div>
+    </div>
 </div>
 
 <style>
 
     .title-text {
         width: 400px;
-        height: 12px;
+        height: 16px;
 
         font-family: Nunito;
         font-style: normal;
-        font-weight: bold;
-        font-size: 12px;
+        font-weight: bolder !important;
+        font-size: 14px;
         line-height: 97.4%;
         /* identical to box height, or 12px */
-        margin: var(--bmargin);
+        margin-left:10px;
+        padding-top: 3px;
     }
 
     .contentItem {
@@ -39,7 +52,7 @@
     }
 
     .title {
-        width: 450px;
+        width: 460px;
         height: 20px;
         left: 27px;
         top: 187px;
@@ -54,9 +67,9 @@
         font-family: Nunito;
         font-style: normal;
         font-weight: normal;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 125%;
-        width: 334px;
+        width: 460px;
         height: 75px;
         left: 35px;
         top: 211px;
@@ -70,24 +83,23 @@
         margin: var(--bmargin);
         display: flex;
         flex-direction: row 
+        
     }
 
     .tag {
-        border: 1px solid #FFDFC1;
-        border-radius: 10px;
-        
-        width: 76px;
-        height: 23px;
+        border-color: var(--c1sub);
+        border-style: solid;
+        border-width: 2px;
+        background-color: var(--bgcolor);
+        border-radius: var(--bradius);
+        padding:0.3rem;
+        margin: 0.3rem;
+    }
 
-        font-family: Nunito;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 12px;
-        line-height: 97.4%;
-        /* or 12px */
-
+    .actions{
+        padding-top: 15px;
         display: flex;
-        align-items: center;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-around 
     }
 </style>
