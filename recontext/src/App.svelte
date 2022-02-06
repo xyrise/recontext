@@ -35,8 +35,7 @@
     let promise = getResults();
     
 </script>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,400,600,800">
 
 <div class='container'>
 <div class='top'>
@@ -78,11 +77,16 @@
 
     <div class='footer'>
         <!-- link number of pages here -->
-        <img src={gleft} alt="left arrow">
-        <div>
-            <p>1/15</p>
+        <img src={gleft} alt="left arrow" style="display: block;
+  margin-left: auto;">
+        <div style='margin:auto;'>
+            <p style='margin:auto;'>1/15</p>
         </div>
         <img src={gright} alt="right arrow">
+    </div>
+
+    <div class='credit'>
+        <p style='font-size:10px;padding:3px;'>© 2022 ReconText Contributors</p>
     </div>
 </div>
 
@@ -141,7 +145,7 @@
     .tagRec{
         border-color: var(--c1sub);
         border-style: solid;
-        border-width: 1px;
+        border-width: 2px;
         background-color: var(--bgcolor);
         border-radius: var(--bradius);
         padding:0.3rem;
@@ -160,13 +164,22 @@
     }
 
     .footer{
-        margin: var(--bmargin);
+        margin: var(--bmargin) var(--bmargin) 1rem var(--bmargin);
+        text-align: center;
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
     }
     .larrow, .rarrow{
         margin:auto;
         padding: 0 var(--arrowpadding);
+    }
+
+    .credit{
+        height: 20px;
+        width: var(--width);
+        background-color: var(--c1);
+        margin: auto;
+        text-align: center;
     }
 
 </style>
