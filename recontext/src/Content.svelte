@@ -1,25 +1,17 @@
 <script>
+    export let results;
+    
     import ContentItem from './ContentItem.svelte';
-    let articles = [
-        {
-            title:"Vaccine confidence in the time of COVID-19",
-            sentences:"We call for a re-imagination of the culture of public health and the meaning of vaccine safety regulations. Public confidence in vaccination programs depends on the work they do for the community, rather than just the delivery of vaccine technology.",
-            tags:["Community","Vaccine"],
-            cited:6
-        },
-        {
-            title:"Vaccine confidence in the time of COVID-19",
-            sentences:"We call for a re-imagination of the culture of public health and the meaning of vaccine safety regulations. Public confidence in vaccination programs depends on the work they do for the community, rather than just the delivery of vaccine technology.",
-            tags:["Community","Vaccine"],
-            cited:6
-        },
-        {
-            title:"Vaccine confidence in the time of COVID-19",
-            sentences:"We call for a re-imagination of the culture of public health and the meaning of vaccine safety regulations. Public confidence in vaccination programs depends on the work they do for the community, rather than just the delivery of vaccine technology.",
-            tags:["Community","Vaccine"],
-            cited:6
-        }
-    ]
+    let articles = [];
+
+    for(let i=0; i<3;i++){
+        articles.push({
+            title: results[i]['title'],
+            sentences: (results[i]['abstract'].substring(0,150)+"...") ,
+            tags:results[i]['keywords'],
+            cited: Math.floor(Math.random()*100)
+        })
+    }
 </script>
 
 <div>
