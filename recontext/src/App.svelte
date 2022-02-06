@@ -32,8 +32,11 @@
             <li class='tagRec'> Regulation </li>
         </div>
     </div>
-    <hr/>
-    <Content/>
+    <div class='results'>
+        <strong> Related Peer-Reviewed Paper </strong>
+        <hr/>
+        <Content/>
+    </div>
 </div>
 
 
@@ -53,6 +56,7 @@
     p{
         margin:0.3rem 0 0 0;
     }
+    strong { font-weight: bold; }
 
     .container{
         font-family: "Nunito",sans-serif;
@@ -89,7 +93,7 @@
     .tagRec{
         border-color: var(--c1sub);
         border-style: solid;
-        border-width: 2px;
+        border-width: 1px;
         background-color: var(--bgcolor);
         border-radius: var(--bradius);
         padding:0.3rem;
@@ -100,7 +104,11 @@
         margin: 0.8rem var(--bmargin);
         display:grid;
         grid-template-columns: 1fr 12fr;
+    }
 
+    .results{
+        margin: var(--bmargin);
+        padding: 0 0.5rem 0 0.5rem;
     }
 
 </style>
