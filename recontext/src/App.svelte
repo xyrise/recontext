@@ -1,5 +1,6 @@
 <script>
     import Content from "./Content.svelte"
+
     let covid = 'img/covid.png';
     let trend = 'img/trend.png';
     let down = 'img/down.png';
@@ -7,7 +8,28 @@
     let gright = 'img/gright.png';
     let left = 'img/Left.png';
     let right = 'img/Right.png';
+    let keywords = ["antivaccine","freedom","regulation"];
+
+    let url = new URL("http://0.0.0.0:80");
+    let params = new URLSearchParams();
+    params.append('max',5);
+    for(let i =0; i< keywords.length; i++){
+        params.append('key',keywords[i]);
+    }
+    url.search = params.toString();
+    console.log(url);
+
+    fetch(url, {
+        method: 'get'
+    })
+    .then(response => {response.json();})
+    .then(jsonData => console.log(jsonData))
+    .catch(err => {
+            //error block
+    });
+    
 </script>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
 
 <div class='container'>
