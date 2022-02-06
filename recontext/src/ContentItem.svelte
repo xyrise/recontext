@@ -3,6 +3,8 @@
     export let sentences;
     export let tags;
     export let cited;
+    export let url;
+    
     let cite = 'img/cite.png';
     let share = 'img/share.png';
     let bookmark = 'img/bookmark.png';
