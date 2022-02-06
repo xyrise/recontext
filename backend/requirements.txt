@@ -1,5 +1,5 @@
 fastapi==0.73.0
 feedparser==6.0.8
-hypercorn==0.17.4
+hypercorn==0.13.2
 sklearn==1.0.2
 pandas==1.4.0
