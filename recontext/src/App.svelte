@@ -9,24 +9,30 @@
     let left = 'img/Left.png';
     let right = 'img/Right.png';
     let keywords = ["antivaccine","freedom","regulation"];
-
+    
     let url = new URL("http://0.0.0.0:80");
     let params = new URLSearchParams();
+
     params.append('max',5);
     for(let i =0; i< keywords.length; i++){
         params.append('key',keywords[i]);
     }
+    
     url.search = params.toString();
     console.log(url);
 
-    fetch(url, {
-        method: 'get'
-    })
-    .then(response => {response.json();})
-    .then(jsonData => console.log(jsonData))
-    .catch(err => {
-            //error block
-    });
+    async function getResults() {
+		const res = await fetch(url, { method: 'get' });
+		const json = await res.json();
+        console.log(json);
+		if (res.ok) {
+			return json;
+		} else {
+			throw new Error(text);
+		}
+	}
+
+    let promise = getResults();
     
 </script>
 
@@ -61,7 +67,13 @@
 </div>
     <div class='results'>
         <strong> Related Peer-Reviewed Paper </strong>
-        <Content/>
+        {#await promise}
+            <p>...waiting</p>
+        {:then results}
+            <Content results={results}/>
+        {:catch error}
+            <p style="color: red">{error.message}</p>
+        {/await}
     </div>
 
     <div class='footer'>
