@@ -10,29 +10,18 @@
 <div class="contentItem">
     <div class="title"><span class="title-text">{title}</span> </div> 
     <p class='sentence'>{sentences}</p>
-    {#each tags as tag}
-        <span class="tag"> {tag} </span>
-    {/each}
+    <div class="tag-container">
+        {#each tags as tag}
+            <div class="tag"> <p>{tag}</p> </div>
+        {/each}
+    </div>
 </div>
 
 <style>
-    :root{
-        --bgcolor: white;
-        --c1: #FF9C55;
-        --c1sub: #FFDAC0;
-        --width: 500px;
-        --height: 640px;
-        --boundh: 60px;
-        --boundw: 485px;
-        --bradius: 10px;
-        --bmargin: 5px;
-    }
 
     .title-text {
-        width: 247px;
+        width: 400px;
         height: 12px;
-        left: 34px;
-        top: 190px;
 
         font-family: Nunito;
         font-style: normal;
@@ -40,26 +29,28 @@
         font-size: 12px;
         line-height: 97.4%;
         /* identical to box height, or 12px */
-
-        display: flex;
-        align-items: center;
+        margin: var(--bmargin);
     }
+
     .contentItem {
-        width: 368px;
-        height: 199px;
+        width: 450px;
+        height: 200px;
+        margin: 5px;
     }
 
     .title {
-        width: 364px;
-        height: 18px;
+        width: 450px;
+        height: 20px;
         left: 27px;
         top: 187px;
-
+        display: inline-flex;
+        align-items: center;
         background: #FFF3E8;
         border-radius: 10px;
     }
     
     .sentence{
+        margin: var(--bmargin);
         font-family: Nunito;
         font-style: normal;
         font-weight: normal;
@@ -75,8 +66,16 @@
         align-items: center;
     }
     
+    .tag-container{
+        margin: var(--bmargin);
+        display: flex;
+        flex-direction: row 
+    }
+
     .tag {
-        position: absolute;
+        border: 1px solid #FFDFC1;
+        border-radius: 10px;
+        
         width: 76px;
         height: 23px;
 

@@ -1,9 +1,9 @@
 <script>
+    import Content from "./Content.svelte"
     let covid = 'img/covid.png';
     let trend = 'img/trend.png';
     let down = 'img/down.png';
 </script>
-<button class="ui button" on:click={sum}> + </button>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
 
 <div class='container'>
@@ -33,7 +33,7 @@
         </div>
     </div>
     <hr/>
-
+    <Content/>
 </div>
 
 
