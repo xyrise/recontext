@@ -33,12 +33,6 @@
             <li class='tagIn'> Freedom </li>
             <li class='tagIn'> Cancer </li>
             <li class='tagIn'> Regulation </li>
-            <li class='tagIn'> Regulation </li>
-            <li class='tagIn'> Regulation </li>
-            <li class='tagIn'> Cancer </li>
-            <li class='tagIn'> Regulation </li>
-            <li class='tagIn'> Regulation </li>
-            <li class='tagIn'> Regulation </li>
         </div>
         <p style='margin:auto;padding:0 0.5rem 0 0.5rem'> Suggestions: </p>
         <div class='tag'>
@@ -47,10 +41,6 @@
             <li class='tagRec'> Community </li>
             <li class='tagRec'> Risky </li>
             <li class='tagRec'> Cancer </li>
-            <li class='tagRec'> Regulation </li>
-            <li class='tagRec'> Regulation </li>
-            <li class='tagRec'> Regulation </li>
-            <li class='tagRec'> Regulation </li>
             <li class='tagRec'> Regulation </li>
         </div>
     </div>

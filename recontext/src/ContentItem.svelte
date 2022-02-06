@@ -12,7 +12,7 @@
 
 <hr>
 <div class="contentItem">
-    <div class="title"><span class="title-text">{title}</span> </div> 
+    <div class="title"><a class="title-text" href="https://arxiv.org/abs/2107.00390v1" target="_blank">{title}</a> </div> 
     <p class='sentence'>{sentences}</p>
     <div class="tag-container">
         {#each tags as tag}
@@ -20,9 +20,9 @@
         {/each}
     </div>
     <div class="actions">
-        <span class='action'><img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={cite} alt="citation icon"> {cited} cited </span>
-        <span class='action'> <img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={share} alt="sharing icon"> share </span>
-        <span class='action'> <img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={bookmark} alt="bookmark icon"> bookmark </span>
+        <a class='action' href="google.com"><img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={cite} alt="citation icon"> {cited} cited </a>
+        <a class='action' href="mailto:jane@google.com"><img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={share} alt="sharing icon"> share </a>
+        <a class='action' href="google.com"><img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={bookmark} alt="bookmark icon"> bookmark </a>
     </div>
 </div>
 
@@ -31,6 +31,7 @@
     .title-text {
         width: 400px;
         height: 16px;
+        color:black;
 
         font-family: Nunito;
         font-style: normal;
@@ -102,7 +103,7 @@
 
     .action{
         height: 23px;
-
+        color:black;
         font-family: Nunito;
         font-style: normal;
         font-weight: 600;
