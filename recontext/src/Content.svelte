@@ -7,9 +7,9 @@
     for(let i=0; i<3;i++){
         articles.push({
             title: results[i]['title'],
-            sentences: (results[i]['abstract'].substring(0,150)+"...") ,
+            sentences: (results[i]['abstract'].substring(0,140)+"...") ,
             tags:results[i]['keywords'],
-            cited: Math.floor(Math.random()*100)
+            cited: results[i]['citationCount']
         })
     }
 </script>

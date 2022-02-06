@@ -1,5 +1,13 @@
 <script>
+    import { onMount } from 'svelte';
     import Content from "./Content.svelte"
+    import { Readability } from '@mozilla/readability';
+    import {retext} from 'retext';
+    import retextPos from 'retext-pos';
+    import retextKeywords from 'retext-keywords';
+    import {toString} from 'nlcst-to-string';
+import { get } from 'svelte/store';
+import ContentItem from './ContentItem.svelte';
 
     let covid = 'img/covid.png';
     let trend = 'img/trend.png';
@@ -8,21 +16,54 @@
     let gright = 'img/gright.png';
     let left = 'img/Left.png';
     let right = 'img/Right.png';
-    let keywords = ["antivaccine","freedom","regulation"];
     
-    let url = new URL("http://0.0.0.0:80");
-    let params = new URLSearchParams();
+    async function getKeywords() {
 
-    params.append('max',5);
-    for(let i =0; i< keywords.length; i++){
-        params.append('key',keywords[i]);
+        function modifyDOM() {
+            return document.body.innerHTML;
+        }
+
+        let result = await chrome.tabs.executeScript({
+            code: '(' + modifyDOM + ')();' 
+            }, (results) => {
+                let text;
+                console.log('Popup script:')
+                console.log(results[0]);
+                var doc = document.implementation.createHTMLDocument("New Document");
+                doc.body.parentElement.innerHTML = results[0];    
+                var article = new Readability(doc).parse();
+                console.log("next line is content");
+                console.log(article.textContent);
+                text = article.textContent;
+
+                return retext()
+                    .use(retextPos) // Make sure to use `retext-pos` before `retext-keywords`.
+                    .use(retextKeywords)
+                    .process(text)
+                    .then(
+                        (file) => {
+                            let url = new URL("http://0.0.0.0:80");
+                            let params = new URLSearchParams();
+                            params.append('max',5);
+                            let keywords = [];
+
+                            console.log('Keywords:');
+                            file.data.keywords.forEach((keyword) => {
+                                keywords.push(toString(keyword.matches[0].node));
+                                params.append('key',toString(keyword.matches[0].node));
+                                console.log(keyword);
+                            });
+                            url.search = params.toString();
+                            return url;
+                    }).then((url) => {return url});
+            });
+        console.log(result);
+        return result;
     }
-    
-    url.search = params.toString();
-    console.log(url);
 
     async function getResults() {
-		const res = await fetch(url, { method: 'get' });
+        let url = await getKeywords();
+        const res = await fetch(url, { method: 'get' });
 		const json = await res.json();
         console.log(json);
 		if (res.ok) {
