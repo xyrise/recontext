@@ -10,7 +10,6 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito%22%3E">
 
-<hr>
 <div class="contentItem">
     <div class="title"><span class="title-text">{title}</span> </div> 
     <p class='sentence'>{sentences}</p>
@@ -20,9 +19,16 @@
         {/each}
     </div>
     <div class="actions">
-        <span class='action'><img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={cite} alt="citation icon"> {cited} cited </span>
-        <span class='action'> <img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={share} alt="sharing icon"> share </span>
-        <span class='action'> <img style='margin:auto;padding:0 0.5rem 0 0.5rem;' src={bookmark} alt="bookmark icon"> bookmark </span>
+        <div>
+            <span>{cited} cited</span>
+        </div>
+        <div>
+            <span> share </span>
+        </div>
+
+        <div>
+            <span> bookmark </span>
+        </div>
     </div>
 </div>
 
@@ -94,7 +100,7 @@
     }
 
     .actions{
-        padding-top: 12px;
+        padding-top: 15px;
         display: flex;
         flex-direction: row;
         justify-content: space-around 

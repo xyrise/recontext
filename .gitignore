@@ -15,6 +15,8 @@
 !*.json
 !*.py
 !*requirements.txt
+!**/img/*
+!**/extension/*
 
 # Blacklist (overrides Whitelist)
 **/public/*
